@@ -1,8 +1,7 @@
   .button {
-    width: 50%;
+    width: 25%;
     margin: 10px auto;
     padding: 0 auto;
-    padding-bottom: 5px;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0 0 5px 3px rgba(100, 100, 100, 0.4);
     position: relative;
@@ -24,6 +23,34 @@
 #down {
     margin: 0;
     position: relative;
-    padding: 0 auto;
+    padding: auto auto;
     float: left;
   }
+
+html
+{
+    background: url(../Website/source/images/background.png) no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.innercontent{
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    background-color: black;
+}
+
+#outer{
+    width: 100%;
+}
+
+#inner{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#buttons{
+    width: 30%:;
+}
