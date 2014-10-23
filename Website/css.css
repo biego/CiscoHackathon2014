@@ -51,6 +51,10 @@ html
     padding-bottom: 25;
 }
 
+#next_button {
+    padding-left: 250
+}
+
 
 .innercontent{
     position: relative;
