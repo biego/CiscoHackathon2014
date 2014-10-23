@@ -1,8 +1,29 @@
   .button {
-    width: 10%;
+    width: 50%;
     margin: 10px auto;
     padding: 0 auto;
     padding-bottom: 5px;
     border-radius: 5px 5px 5px 5px;
-    background: #ffffff;
+    box-shadow: 0 0 5px 3px rgba(100, 100, 100, 0.4);
+    position: relative;
+  }
+
+#body {
+    margin: 0;
+    position: relative;
+    padding: 0 auto;
+  }
+
+#up {
+    margin: 0;
+    position: relative;
+    padding: 0 auto;
+    float: left;
+  }
+
+#down {
+    margin: 0;
+    position: relative;
+    padding: 0 auto;
+    float: left;
   }
