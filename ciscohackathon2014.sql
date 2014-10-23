@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2014 at 08:28 PM
+-- Generation Time: Oct 23, 2014 at 11:23 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -55,10 +55,10 @@ CREATE TABLE IF NOT EXISTS `crime_type` (
 --
 
 INSERT INTO `crime_type` (`cid`, `name`, `urgency`) VALUES
-(1, 'Murder', 1),
+(1, 'Vandalism', 1),
 (2, 'Robbery', 3),
-(3, 'Loitering', 3),
-(4, 'Blackmail', 2);
+(3, 'Drug abuse', 3),
+(4, 'Metal theft', 2);
 
 -- --------------------------------------------------------
 
@@ -68,11 +68,22 @@ INSERT INTO `crime_type` (`cid`, `name`, `urgency`) VALUES
 
 CREATE TABLE IF NOT EXISTS `emergencies` (
   `eid` int(11) NOT NULL,
-  `location` point NOT NULL,
+  `location` text NOT NULL,
   `time` date NOT NULL,
   `phone_nr` int(11) NOT NULL,
   `cid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `emergencies`
+--
+
+INSERT INTO `emergencies` (`eid`, `location`, `time`, `phone_nr`, `cid`) VALUES
+(1, 'New Street', '2014-10-01', 2147483647, 3),
+(2, 'University station', '2014-08-17', 771117546, 3),
+(3, 'Selly Oak Station', '0000-00-00', 771337546, 4),
+(4, 'Five Ways', '0000-00-00', 771117546, 1),
+(5, 'Random station', '0000-00-00', 770017546, 2);
 
 -- --------------------------------------------------------
 
@@ -87,6 +98,13 @@ CREATE TABLE IF NOT EXISTS `evidence` (
   `type` text NOT NULL,
   `pid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `evidence`
+--
+
+INSERT INTO `evidence` (`eid`, `name`, `source`, `type`, `pid`) VALUES
+(1, 'Jane Doe', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wC', 'Photo', 1);
 
 -- --------------------------------------------------------
 
@@ -120,9 +138,9 @@ CREATE TABLE IF NOT EXISTS `police_report` (
 --
 
 INSERT INTO `police_report` (`pid`, `date`, `cid`, `location`, `describtion`) VALUES
-(1, '0000-00-00', 3, '146 Metchley Drive', 'A burglar as broken into the house and stolen the Mona Lisa'),
-(2, '0000-00-00', 4, '1 Corronation Rd', 'Former IRA Chief of Staff Joe Cahill was allegedly photographed abusing a 14-year-old girl in the 1970s, and British agents used to evidence to turn him, military officials told the Daily Mirror.'),
-(3, '0000-00-00', 2, '9 Alder Cloth', 'A student reported a stolen laptop');
+(1, '2014-10-10', 3, 'New Street Station', 'A group of students arrested for drinking on the public transport'),
+(2, '2014-10-19', 4, 'Selly Oak station', 'Former IRA Chief of Staff was spotted stealing metal railings on the train'),
+(3, '2014-08-11', 2, 'University Station', 'A student reported a stolen laptop as he was taking a train to London from Edinburgh');
 
 -- --------------------------------------------------------
 
@@ -151,6 +169,15 @@ CREATE TABLE IF NOT EXISTS `witness_report` (
   `location` text NOT NULL,
   `statement` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `witness_report`
+--
+
+INSERT INTO `witness_report` (`wid`, `pid`, `date`, `location`, `statement`) VALUES
+(1, 1, '2014-10-11', 'New Street station', 'Jane Doe has reported a group of students drinking and shouting on the train going from University station to New Street station'),
+(2, 1, '2014-10-12', 'Five Ways', 'Dan Ghica has identified three of University of Birmingham students that were accused of drug abuse on the train from University station to New Street'),
+(3, 2, '2014-10-23', 'Selly Oak station', 'Poppie Simmonds has reported seeing a man in his 50-ies stealing metal railings from the train going towards Selly Oak station');
 
 --
 -- Indexes for dumped tables
