@@ -1,0 +1,46 @@
+body
+{
+	background: url(../img/background.png) no-repeat center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	color:#626262;
+	font-size: 16px;
+}
+
+#outer{
+    width: 100%;
+}
+
+.inner{
+    width: 70%;
+    margin: 0 auto;
+}
+
+#title
+{
+	width: 30%;
+	min-width: 	275px;
+	padding-top: 2%;
+}
+
+.innercontent{
+    width: 100%;
+	height: auto;
+}
+
+#content
+{
+	width: 50%;
+	min-width: 440px;
+	padding-top: 5%;
+}
+
+.buttons
+{
+	width: 44%;
+	padding-left: 5%;
+	padding-top: 5%;	
+	display:inline-block;
+}
+	
