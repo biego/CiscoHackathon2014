@@ -38,11 +38,18 @@ body
 
 .buttons
 {
-	width: 44%;
-	padding-left: 5%;
-	padding-top: 5%;	
+    width: 44%;
+    
+    margin-left: 5%;
+    margin-top: 5%;	
 	display:inline-block;
+
+
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 5px 3px rgba(100, 100, 100, 0.4);
+
 }
+
 	
 
 #input_boxes {
