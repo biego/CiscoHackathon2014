@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2014 at 06:30 PM
+-- Generation Time: Oct 23, 2014 at 08:28 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -49,6 +49,16 @@ CREATE TABLE IF NOT EXISTS `crime_type` (
   `name` text NOT NULL,
   `urgency` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `crime_type`
+--
+
+INSERT INTO `crime_type` (`cid`, `name`, `urgency`) VALUES
+(1, 'Murder', 1),
+(2, 'Robbery', 3),
+(3, 'Loitering', 3),
+(4, 'Blackmail', 2);
 
 -- --------------------------------------------------------
 
@@ -101,9 +111,18 @@ CREATE TABLE IF NOT EXISTS `police_report` (
   `pid` int(11) NOT NULL,
   `date` date NOT NULL,
   `cid` int(11) NOT NULL,
-  `location` int(11) NOT NULL,
+  `location` text NOT NULL,
   `describtion` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `police_report`
+--
+
+INSERT INTO `police_report` (`pid`, `date`, `cid`, `location`, `describtion`) VALUES
+(1, '0000-00-00', 3, '146 Metchley Drive', 'A burglar as broken into the house and stolen the Mona Lisa'),
+(2, '0000-00-00', 4, '1 Corronation Rd', 'Former IRA Chief of Staff Joe Cahill was allegedly photographed abusing a 14-year-old girl in the 1970s, and British agents used to evidence to turn him, military officials told the Daily Mirror.'),
+(3, '0000-00-00', 2, '9 Alder Cloth', 'A student reported a stolen laptop');
 
 -- --------------------------------------------------------
 
