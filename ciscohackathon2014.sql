@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2014 at 05:58 AM
+-- Generation Time: Oct 24, 2014 at 03:31 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -30,12 +30,12 @@ USE `ciscohackathon2014`;
 
 DROP TABLE IF EXISTS `app_input`;
 CREATE TABLE IF NOT EXISTS `app_input` (
-`appid` int(11) NOT NULL,
+  `appid` int(11) NOT NULL,
   `pid` int(11) DEFAULT NULL,
   `location` text NOT NULL,
   `description` text NOT NULL,
   `userid` int(11) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `app_input`
@@ -59,10 +59,10 @@ INSERT INTO `app_input` (`appid`, `pid`, `location`, `description`, `userid`) VA
 
 DROP TABLE IF EXISTS `crime_type`;
 CREATE TABLE IF NOT EXISTS `crime_type` (
-`cid` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
   `name` text NOT NULL,
   `urgency` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `crime_type`
@@ -82,12 +82,12 @@ INSERT INTO `crime_type` (`cid`, `name`, `urgency`) VALUES
 
 DROP TABLE IF EXISTS `emergencies`;
 CREATE TABLE IF NOT EXISTS `emergencies` (
-`eid` int(11) NOT NULL,
+  `eid` int(11) NOT NULL,
   `location` text NOT NULL,
   `time` date NOT NULL,
   `phone_nr` int(11) NOT NULL,
   `cid` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `emergencies`
@@ -113,12 +113,12 @@ INSERT INTO `emergencies` (`eid`, `location`, `time`, `phone_nr`, `cid`) VALUES
 
 DROP TABLE IF EXISTS `evidence`;
 CREATE TABLE IF NOT EXISTS `evidence` (
-`eid` int(11) NOT NULL,
+  `eid` int(11) NOT NULL,
   `name` text NOT NULL,
   `source` text NOT NULL,
   `type` text NOT NULL,
   `pid` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `evidence`
@@ -141,12 +141,12 @@ INSERT INTO `evidence` (`eid`, `name`, `source`, `type`, `pid`) VALUES
 
 DROP TABLE IF EXISTS `maps`;
 CREATE TABLE IF NOT EXISTS `maps` (
-`mapid` int(11) NOT NULL,
+  `mapid` int(11) NOT NULL,
   `cid` int(11) NOT NULL,
   `location` text NOT NULL,
   `pid` int(11) DEFAULT NULL,
   `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -156,11 +156,11 @@ CREATE TABLE IF NOT EXISTS `maps` (
 
 DROP TABLE IF EXISTS `media`;
 CREATE TABLE IF NOT EXISTS `media` (
-`mid` int(11) NOT NULL,
+  `mid` int(11) NOT NULL,
   `appid` int(11) NOT NULL,
   `type` text NOT NULL,
   `source` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `media`
@@ -181,12 +181,12 @@ INSERT INTO `media` (`mid`, `appid`, `type`, `source`) VALUES
 
 DROP TABLE IF EXISTS `police_report`;
 CREATE TABLE IF NOT EXISTS `police_report` (
-`pid` int(11) NOT NULL,
+  `pid` int(11) NOT NULL,
   `date` date NOT NULL,
   `cid` int(11) NOT NULL,
   `location` text NOT NULL,
   `describtion` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `police_report`
@@ -209,11 +209,11 @@ INSERT INTO `police_report` (`pid`, `date`, `cid`, `location`, `describtion`) VA
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
-`userid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
   `phone_nr` int(11) NOT NULL,
   `password` text NOT NULL,
   `type` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -234,12 +234,12 @@ INSERT INTO `users` (`userid`, `phone_nr`, `password`, `type`) VALUES
 
 DROP TABLE IF EXISTS `witness_report`;
 CREATE TABLE IF NOT EXISTS `witness_report` (
-`wid` int(11) NOT NULL,
+  `wid` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   `date` date NOT NULL,
   `location` text NOT NULL,
   `statement` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `witness_report`
@@ -264,7 +264,7 @@ INSERT INTO `witness_report` (`wid`, `pid`, `date`, `location`, `statement`) VAL
 -- Indexes for table `app_input`
 --
 ALTER TABLE `app_input`
- ADD PRIMARY KEY (`appid`), ADD UNIQUE KEY `appid` (`appid`), ADD KEY `pid` (`pid`), ADD KEY `userid` (`userid`);
+ ADD PRIMARY KEY (`appid`), ADD UNIQUE KEY `appid` (`appid`), ADD KEY `userid` (`userid`), ADD KEY `pid` (`pid`);
 
 --
 -- Indexes for table `crime_type`
@@ -315,55 +315,6 @@ ALTER TABLE `witness_report`
  ADD PRIMARY KEY (`wid`), ADD KEY `pid` (`pid`);
 
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `app_input`
---
-ALTER TABLE `app_input`
-MODIFY `appid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `crime_type`
---
-ALTER TABLE `crime_type`
-MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `emergencies`
---
-ALTER TABLE `emergencies`
-MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `evidence`
---
-ALTER TABLE `evidence`
-MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `maps`
---
-ALTER TABLE `maps`
-MODIFY `mapid` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `media`
---
-ALTER TABLE `media`
-MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `police_report`
---
-ALTER TABLE `police_report`
-MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `witness_report`
---
-ALTER TABLE `witness_report`
-MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
 -- Constraints for dumped tables
 --
 
@@ -371,14 +322,15 @@ MODIFY `wid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- Constraints for table `app_input`
 --
 ALTER TABLE `app_input`
-ADD CONSTRAINT `app_input_ibfk_3` FOREIGN KEY (`pid`) REFERENCES `police_report` (`pid`),
-ADD CONSTRAINT `app_input_ibfk_4` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`);
+ADD CONSTRAINT `app_input_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`),
+ADD CONSTRAINT `app_input_ibfk_3` FOREIGN KEY (`pid`) REFERENCES `police_report` (`pid`);
 
 --
 -- Constraints for table `emergencies`
 --
 ALTER TABLE `emergencies`
-ADD CONSTRAINT `emergencies_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `crime_type` (`cid`);
+ADD CONSTRAINT `emergencies_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `crime_type` (`cid`),
+ADD CONSTRAINT `emergencies_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `crime_type` (`cid`);
 
 --
 -- Constraints for table `evidence`
@@ -402,7 +354,8 @@ ADD CONSTRAINT `police_report_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `crime_type
 -- Constraints for table `witness_report`
 --
 ALTER TABLE `witness_report`
-ADD CONSTRAINT `witness_report_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `police_report` (`pid`);
+ADD CONSTRAINT `witness_report_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `police_report` (`pid`),
+ADD CONSTRAINT `witness_report_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `police_report` (`pid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
