@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2014 at 03:31 AM
+-- Generation Time: Oct 24, 2014 at 05:33 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -181,12 +181,12 @@ INSERT INTO `media` (`mid`, `appid`, `type`, `source`) VALUES
 
 DROP TABLE IF EXISTS `police_report`;
 CREATE TABLE IF NOT EXISTS `police_report` (
-  `pid` int(11) NOT NULL,
+`pid` int(11) NOT NULL,
   `date` date NOT NULL,
   `cid` int(11) NOT NULL,
   `location` text NOT NULL,
   `describtion` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `police_report`
@@ -315,6 +315,15 @@ ALTER TABLE `witness_report`
  ADD PRIMARY KEY (`wid`), ADD KEY `pid` (`pid`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `police_report`
+--
+ALTER TABLE `police_report`
+MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
 -- Constraints for dumped tables
 --
 
@@ -354,8 +363,7 @@ ADD CONSTRAINT `police_report_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `crime_type
 -- Constraints for table `witness_report`
 --
 ALTER TABLE `witness_report`
-ADD CONSTRAINT `witness_report_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `police_report` (`pid`),
-ADD CONSTRAINT `witness_report_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `police_report` (`pid`);
+ADD CONSTRAINT `witness_report_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `police_report` (`pid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
