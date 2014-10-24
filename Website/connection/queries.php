@@ -29,13 +29,10 @@ function getPoliceReportLoc($location)
 
 function getCrimeType($cid)
 {
-	$sql = "SELECT name FROM crime_type WHERE cid = '$cid'";
+	$sql = "SELECT * FROM Crime_type WHERE cid = '$cid'";
 	$res = dbQuery($sql);
 	
-	while($row = mysqli_fetch_array($res))
-	{
-		return $row['name'];	
-	}
+	return $res;
 }
 
 
@@ -63,7 +60,7 @@ function getAppInput($appid)
 
 function getAppInputLoc($location)
 {
-	$sql = "SELECT * FROM Ap_input WHERE location = '$loacation'";
+	$sql = "SELECT * FROM App_input WHERE location = '$location'";
 		$res = dbQuery($sql);
 	return $res;
 }
@@ -84,7 +81,7 @@ function getEmergencies($eid)
 
 function getEmergenciesLoc($location)
 {
-	$sql = "SELECT * FROM Emergencies WHERE location = '$loacation'";
+	$sql = "SELECT * FROM Emergencies WHERE location = '$location'";
 		$res = dbQuery($sql);
 	return $res;
 }
