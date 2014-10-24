@@ -119,30 +119,48 @@ function showAppInputLoc($location)
 	}
 }
 
-************************
-
-function getAllEmergencies()
-{	
-	$sql = "SELECT * FROM Emergencies";
-	$res = dbQuery($sql);
-	return $res;
-}
-
-function getEmergencies($eid)
+function showAllEmergencies()
 {
-	$sql = "SELECT * FROM Emergencies WHERE eid = '$eid'";
-	$res = dbQuery($sql);
-	return $res;
+	$res = getAllEmergencies();
+	foreach ($res as $report)
+	{
+		echo "Emergency #".$report['eid']."<br/>";
+		echo "Crime Type: ".getCrimeType($report['cid'])."<br/>";
+		echo "Location: ".$report['location']."<br/>";
+		echo "Emergency Time: ".$report['time']."<br/>"; 
+		echo "Reported From :".$report['phone_nr']."<br/>";
+		echo "<br/>".;
+	}
 }
 
-function getEmergenciesLoc($location)
+function showEmergencies($eid)
 {
-	$sql = "SELECT * FROM Emergencies WHERE location = '$loacation'";
-		$res = dbQuery($sql);
-	return $res;
+	$res = getEmergencies($eid);
+	foreach ($res as $report)
+	{
+		echo "Emergency #".$report['eid']."<br/>";
+		echo "Crime Type: ".getCrimeType($report['cid'])."<br/>";
+		echo "Location: ".$report['location']."<br/>";
+		echo "Emergency Time: ".$report['time']."<br/>"; 
+		echo "Reported From :".$report['phone_nr']."<br/>";
+		echo "<br/>".;
+	}
 }
 
-***************************
+function showEmergenciesLoc($location)
+{
+	$res = getEmergenciesLoc($location);
+	foreach ($res as $report)
+	{
+		echo "Emergency #".$report['eid']."<br/>";
+		echo "Crime Type: ".getCrimeType($report['cid'])."<br/>";
+		echo "Location: ".$report['location']."<br/>";
+		echo "Emergency Time: ".$report['time']."<br/>"; 
+		echo "Reported From :".$report['phone_nr']."<br/>";
+		echo "<br/>".;
+	}
+}
+
 
 function showAllRelatedEvidence($pid)
 {
