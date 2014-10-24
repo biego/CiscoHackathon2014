@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2014 at 02:52 AM
+-- Generation Time: Oct 24, 2014 at 03:31 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -31,11 +31,25 @@ USE `ciscohackathon2014`;
 DROP TABLE IF EXISTS `app_input`;
 CREATE TABLE IF NOT EXISTS `app_input` (
   `appid` int(11) NOT NULL,
-  `pid` int(11) NOT NULL,
+  `pid` int(11) DEFAULT NULL,
   `location` text NOT NULL,
   `description` text NOT NULL,
-  `userid` int(11) NOT NULL
+  `userid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `app_input`
+--
+
+INSERT INTO `app_input` (`appid`, `pid`, `location`, `description`, `userid`) VALUES
+(1, NULL, 'New Street station', 'A man in his 50-ies just stole a chair from the train', 2),
+(2, 3, 'University', 'I just saw a dude that stole this dude''s laptop. He''s around 5''7 and has brown hair. I tried to take a picture', 4),
+(3, NULL, 'University station', 'A guy was smoking weed all the way from Selly Oak station to New Street', 2),
+(4, NULL, 'Rainbow station', 'Here''s a great picture of my cat', 3),
+(5, 2, 'Selly Oak station', 'I believe this is the former IRA chief that is currently stealing the metal railings. Please find the video attached', 5),
+(6, 7, 'New Street', 'After a shift end check up I can confirm that a set of cables are missing from the train #1234 wagon 6', 2),
+(7, NULL, 'New Street station', 'Camera #125 Automatic report: Alarm on door 655. Video attached', NULL),
+(8, 4, 'New Street station', 'Camera #897 Automatic report: illegal activity recorded', NULL);
 
 -- --------------------------------------------------------
 
@@ -147,6 +161,17 @@ CREATE TABLE IF NOT EXISTS `media` (
   `type` text NOT NULL,
   `source` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `media`
+--
+
+INSERT INTO `media` (`mid`, `appid`, `type`, `source`) VALUES
+(1, 2, 'Picture', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA'),
+(2, 4, 'Picture', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABASJDASJBDB'),
+(3, 5, 'Video', 'data:video/mpeg4;base64,/9j/4AAQSkZJRgABAQAAAQA456565'),
+(4, 7, 'Video', 'data:video/mpeg4;base64,/9j/4AAQSkZJRgABAQAAAQAB5563111444'),
+(5, 8, 'Video', 'data:video/mpeg4;base64,/9j/HASHDAKSHDAKSHDAKSHDKASHD/2wC');
 
 -- --------------------------------------------------------
 
