@@ -27,5 +27,6 @@ function constructUrl(s_stationId,s_date,s_time,n_trainNumbers, s_goingToStId, s
 };
 
 function callBack(xHTML){
-	alert(xHTML.responseText)
+	var container = document.getElementById("trainInfoContainer");
+	container.innerHTML = xHTML.responseText;
 }
