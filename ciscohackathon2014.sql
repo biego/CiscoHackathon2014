@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2014 at 01:04 AM
+-- Generation Time: Oct 24, 2014 at 02:52 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -28,12 +28,11 @@ USE `ciscohackathon2014`;
 -- Table structure for table `app_input`
 --
 
+DROP TABLE IF EXISTS `app_input`;
 CREATE TABLE IF NOT EXISTS `app_input` (
   `appid` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   `location` text NOT NULL,
-  `phone_nr` int(11) NOT NULL,
-  `name` text NOT NULL,
   `description` text NOT NULL,
   `userid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -44,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `app_input` (
 -- Table structure for table `crime_type`
 --
 
+DROP TABLE IF EXISTS `crime_type`;
 CREATE TABLE IF NOT EXISTS `crime_type` (
   `cid` int(11) NOT NULL,
   `name` text NOT NULL,
@@ -66,6 +66,7 @@ INSERT INTO `crime_type` (`cid`, `name`, `urgency`) VALUES
 -- Table structure for table `emergencies`
 --
 
+DROP TABLE IF EXISTS `emergencies`;
 CREATE TABLE IF NOT EXISTS `emergencies` (
   `eid` int(11) NOT NULL,
   `location` text NOT NULL,
@@ -96,6 +97,7 @@ INSERT INTO `emergencies` (`eid`, `location`, `time`, `phone_nr`, `cid`) VALUES
 -- Table structure for table `evidence`
 --
 
+DROP TABLE IF EXISTS `evidence`;
 CREATE TABLE IF NOT EXISTS `evidence` (
   `eid` int(11) NOT NULL,
   `name` text NOT NULL,
@@ -120,9 +122,25 @@ INSERT INTO `evidence` (`eid`, `name`, `source`, `type`, `pid`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `maps`
+--
+
+DROP TABLE IF EXISTS `maps`;
+CREATE TABLE IF NOT EXISTS `maps` (
+  `mapid` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
+  `location` text NOT NULL,
+  `pid` int(11) DEFAULT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `media`
 --
 
+DROP TABLE IF EXISTS `media`;
 CREATE TABLE IF NOT EXISTS `media` (
   `mid` int(11) NOT NULL,
   `appid` int(11) NOT NULL,
@@ -136,6 +154,7 @@ CREATE TABLE IF NOT EXISTS `media` (
 -- Table structure for table `police_report`
 --
 
+DROP TABLE IF EXISTS `police_report`;
 CREATE TABLE IF NOT EXISTS `police_report` (
   `pid` int(11) NOT NULL,
   `date` date NOT NULL,
@@ -163,13 +182,24 @@ INSERT INTO `police_report` (`pid`, `date`, `cid`, `location`, `describtion`) VA
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `userid` int(11) NOT NULL,
   `phone_nr` int(11) NOT NULL,
   `password` text NOT NULL,
-  `type` text NOT NULL,
-  `appid` int(11) NOT NULL
+  `type` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userid`, `phone_nr`, `password`, `type`) VALUES
+(1, 2147483647, 'Password', 'General user'),
+(2, 755345677, 'Pass', 'General user'),
+(3, 755345677, 'Pass', 'General user'),
+(4, 2147483647, 'GoodPass1+', 'General user'),
+(5, 2147483647, 'PumpkinPie', 'General user');
 
 -- --------------------------------------------------------
 
@@ -177,6 +207,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Table structure for table `witness_report`
 --
 
+DROP TABLE IF EXISTS `witness_report`;
 CREATE TABLE IF NOT EXISTS `witness_report` (
   `wid` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
@@ -208,7 +239,7 @@ INSERT INTO `witness_report` (`wid`, `pid`, `date`, `location`, `statement`) VAL
 -- Indexes for table `app_input`
 --
 ALTER TABLE `app_input`
- ADD PRIMARY KEY (`appid`), ADD KEY `userid` (`userid`), ADD KEY `pid` (`pid`);
+ ADD PRIMARY KEY (`appid`), ADD UNIQUE KEY `appid` (`appid`), ADD KEY `userid` (`userid`), ADD KEY `pid` (`pid`);
 
 --
 -- Indexes for table `crime_type`
@@ -229,6 +260,12 @@ ALTER TABLE `evidence`
  ADD PRIMARY KEY (`eid`), ADD KEY `pid` (`pid`);
 
 --
+-- Indexes for table `maps`
+--
+ALTER TABLE `maps`
+ ADD PRIMARY KEY (`mapid`);
+
+--
 -- Indexes for table `media`
 --
 ALTER TABLE `media`
@@ -244,7 +281,7 @@ ALTER TABLE `police_report`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
- ADD PRIMARY KEY (`userid`), ADD KEY `appid` (`appid`);
+ ADD PRIMARY KEY (`userid`);
 
 --
 -- Indexes for table `witness_report`
@@ -287,12 +324,6 @@ ADD CONSTRAINT `media_ibfk_1` FOREIGN KEY (`appid`) REFERENCES `app_input` (`app
 --
 ALTER TABLE `police_report`
 ADD CONSTRAINT `police_report_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `crime_type` (`cid`);
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`appid`) REFERENCES `app_input` (`appid`);
 
 --
 -- Constraints for table `witness_report`
