@@ -1,5 +1,17 @@
 <html>
 <head>
+<?php
+if($_POST)
+{//$eid, $name, $source, $type, $pid
+	addEvidence($_POST['eid'], $_POST['name'], $_POST['source'], $_POST['type'], $_POST['pid']);
+	
+	if($_POST['submitform'] == 'Another')
+		echo "<meta http-equiv=\"refresh\" content=\"0; url='cevidence.php'/\" />";
+	else
+		echo "<meta http-equiv=\"refresh\" content=\"0; url='police.php'/\" />";
+}
+?>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript" src="theme/javascript/javascript.js"></script>
 <link rel="stylesheet" href="css/reset.css" type="text/css"/>
@@ -14,43 +26,29 @@
                 <a href= "police.php"><img src="img/LOGO Train watch.png" class="innercontent"/></a>
             </div>
             
-            <div id="input_boxes">
+            <div class="inner formFormat">
 			<h1>Evidence</h1>
-			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
-				<form>
-					Name: <input type="text">
+				<form style="line-height: 3em;" method="post" action="<?php $_SERVER['PHP_SELF'] ?>
+					<label for="ename">Name: </label>
+                    	<input name="ename" id="ename" type="text"><br/>
+                    
+                    <label for="etype">File Type: </label>
+                        <select id = "etype" name="etype">
+                            <option value ="image">Image</option>
+                            <option value ="video">Video</option>
+                            <option value ="audio">Audio</option>
+                        </select><br/>
+                    
+                    <label for="edoc">Document: </label>
+                    	<input name="edoc" id="edoc" type="file"><br/>
+                        
+                    <label for="edesc">Description:</label>
+                    	<input name="edesc" id="edesc" type="text"><br/>
+                        
+                    <input type="submit" value="Another" id="submitform">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" value="Submit" id="submitform">
 				</form>
 			</div>
-			
-			<div id = "input_type" class ="input_box"> <!--Type of crime  cid-->
-			<!--<input type="file" name="datafile" size="40"> -->
-				<label for="typeselect">File Type: </label>
-				<select id = "inputselect">
-					<option value ="image">Image</option>
-					<option value ="video">Video</option>
-					<option value ="audion">Audio</option>
-				</select>
-			</div>
-			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
-				<form>
-					Document: <input type="file">
-				</form>
-			</div>
-			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
-				<form>
-					Description: <input type="text">
-				</form>
-			</div>
-			
-
-		<div id= "back_button">
-			<a href= "police.php">Back</a>
-		</div>
-		<div id="next_button"> 
-			<a href="next">Submit</a>
-		</div>
-
-		</div>
 		</div>
 	</div>
 </body>
