@@ -9,7 +9,7 @@
 
 <body>
 	<script type="text/javascript">
-		requestData("data/trainTimes.html",callback);
+		requestData("data/trainInfo.html",callback);
 	</script>
 	<div id = "outer">
 		<div class= "inner">
