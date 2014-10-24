@@ -19,7 +19,7 @@
             
             <div id="content" class="inner">
             	<div class="inner buttons">
-                	<a href= "pevidence.php"><img src="img/BUTTON police report.png" class="innercontent"/></a>
+                	<a href= "newsfeed.php"><img src="img/BUTTON police report.png" class="innercontent"/></a>
                 </div>
                 <div class="inner buttons">
                 	<a href= "preport.php"><img src="img/BUTTON create report.png" class="innercontent"/></a>

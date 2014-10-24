@@ -7,12 +7,14 @@ function showAllPoliceReports()
 	$res = getAllPoliceReports();
 	foreach ($res as $report)
 	{
+		echo '<div class="feed">';
 		echo "Case #".$report['pid']."<br/>";
 		echo $report['date']."<br/>";
 		echo "Crime Type: ".getCrimeType($report['cid'])."<br/>";
 		echo "Location: ".$report['location']."<br/>";
 		echo "Description: ".$report['describtion']."<br/>"; 
 		echo "<br/>";
+		echo "</div>";
 	}
 }
 
@@ -30,5 +32,4 @@ function showAllRelatedEvidence($pid)
 	}
 }
 
-function 
 ?>
