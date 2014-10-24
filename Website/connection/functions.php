@@ -9,7 +9,7 @@ function showAllPoliceReports()
 	{
 		echo '<div class="feed">';
 		echo "Case #".$report['pid']."<br/>";
-		echo "Date :"$report['date']."<br/>";
+		echo "Date :".$report['date']."<br/>";
 		echo "Crime Type: ".getCrimeType($report['cid'])."<br/>";
 		echo "Location: ".$report['location']."<br/>";
 		echo "Description: ".$report['describtion']."<br/>"; 

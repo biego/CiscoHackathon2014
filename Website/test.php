@@ -10,7 +10,7 @@ include_once("connection/functions.php"); ?>
 <body>
 <?php
 	echo "MOOP!<br/>";
-	showAllRelatedEvidence(1);
+	showAllPoliceReports();
 ?>
 </body>
 </html>
