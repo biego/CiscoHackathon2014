@@ -8,12 +8,15 @@
 </head>	
 
 <body>
+	<script type="text/javascript">
+		requestData("data/trainTimes.html",callback);
+	</script>
 	<div id = "outer">
 		<div class= "inner">
 			<div id="title" class="inner">
                 <a href= "police.php"><img src="img/LOGO Train watch.png" class="innercontent"/></a>
             </div>
-            
+            <div id="trainInfoContainer">
             <div id="allfeed"><?php include_once("connection/functions.php"); showAllPoliceReports(); ?></div>
 			
 		</div>
