@@ -75,3 +75,7 @@ body
 .formFormat{
 	width: 30%;	
 }
+
+#mapwrap{
+    width:60%;
+}
