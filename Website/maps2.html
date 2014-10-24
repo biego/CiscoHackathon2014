@@ -20,8 +20,6 @@
           var pos = new google.maps.LatLng(position.coords.latitude,
                                          position.coords.longitude);
 
-          alert(pos)
-
           var myLatlng = new google.maps.LatLng(51.55, -0.5);
           var myLatlng2 = new google.maps.LatLng(51.45, -0.47);
           var myLatlng3 = new google.maps.LatLng(51.47, -0.49);
@@ -37,27 +35,100 @@
 
           var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-          var contentString = '<div id="content">'+
+          var contentString1 = '<div id="content">'+
+             '<div id="siteNotice">'+
+             '</div>'+
+             '<h1 id="firstHeading" class="firstHeading">Crime - Mugging</h1>'+
+             '<div id="bodyContent">'+
+             '<p><b></b> Mrs Patterson was robbed of her purse' +
+             '</p>'+''
+             '</div>'+
+             '</div>';
+
+            var contentString2 = '<div id="content">'+
              '<div id="siteNotice">'+
              '</div>'+
              '<h1 id="firstHeading" class="firstHeading">Crime - Stabbing</h1>'+
              '<div id="bodyContent">'+
-             '<p><b>Crime - Stabbing</b> Information on crime' +
-             '</p>'+
-             '<p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-             'http://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-             '(last visited June 22, 2009).</p>'+
+             '<p><b></b> A Mr Davig Clegg was stabbed while waiting for a train' +
+             '</p>'+''
              '</div>'+
              '</div>';
 
-          var infowindow = new google.maps.InfoWindow({
-              content: contentString
+             var contentString3 = '<div id="content">'+
+             '<div id="siteNotice">'+
+             '</div>'+
+             '<h1 id="firstHeading" class="firstHeading">Crime - Metal Theft</h1>'+
+             '<div id="bodyContent">'+
+             '<p><b></b> Railway went missing at 03:30 on wednesday' +
+             '</p>'+''
+             '</div>'+
+             '</div>';
+
+             var contentString4 = '<div id="content">'+
+             '<div id="siteNotice">'+
+             '</div>'+
+             '<h1 id="firstHeading" class="firstHeading">Crime - Vandalism</h1>'+
+             '<div id="bodyContent">'+
+             '<p><b></b> The front of the station was defaced at 11:30' +
+             '</p>'+''
+             '</div>'+
+             '</div>';
+
+             var contentString5 = '<div id="content">'+
+             '<div id="siteNotice">'+
+             '</div>'+
+             '<h1 id="firstHeading" class="firstHeading">Crime - Drunk and Disorderly</h1>'+
+             '<div id="bodyContent">'+
+             '<p><b></b>Reports on train to Euston of 5 drunk males' +
+             '</p>'+''
+             '</div>'+
+             '</div>';
+
+             var contentString6 = '<div id="content">'+
+             '<div id="siteNotice">'+
+             '</div>'+
+             '<h1 id="firstHeading" class="firstHeading">Crime - Stabbing</h1>'+
+             '<div id="bodyContent">'+
+             '<p><b></b> Mr Bob Parker was stabbed while on he train' +
+             '</p>'+''
+             '</div>'+
+             '</div>';
+
+          var infowindow1 = new google.maps.InfoWindow({
+              content: contentString1,
+              position: myLatlng
+          });
+
+          var infowindow2 = new google.maps.InfoWindow({
+              content: contentString2,
+              position: myLatlng2
+          });
+
+          var infowindow3 = new google.maps.InfoWindow({
+              content: contentString3,
+              position: myLatlng2
+          });
+
+          var infowindow4 = new google.maps.InfoWindow({
+              content: contentString4,
+              position: myLatlng2
+          });
+
+          var infowindow5 = new google.maps.InfoWindow({
+              content: contentString5,
+              position: myLatlng2
+          });
+
+          var infowindow6 = new google.maps.InfoWindow({
+              content: contentString6,
+              position: myLatlng2
           });
 
           var marker = new google.maps.Marker({
             position: myLatlng,
             map: map,
-            title: 'Uluru (Ayers Rock)'
+            title: 'Crime - 583245'
           });
 
           var marker2 = new google.maps.Marker({
@@ -91,33 +162,33 @@
           });
 
           google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map,marker);
+            infowindow1.open(map,marker);
           });
 
           google.maps.event.addListener(marker2, 'click', function() {
-            infowindow.open(map,marker2);
+            infowindow2.open(map,marker2);
           });
 
           google.maps.event.addListener(marker3, 'click', function() {
-            infowindow.open(map,marker3);
+            infowindow3.open(map,marker3);
           });
 
           google.maps.event.addListener(marker4, 'click', function() {
-            infowindow.open(map,marker4);
+            infowindow4.open(map,marker4);
           });
 
           google.maps.event.addListener(marker5, 'click', function() {
-            infowindow.open(map,marker5);
+            infowindow5.open(map,marker5);
           });
 
           google.maps.event.addListener(marker6, 'click', function() {
-            infowindow.open(map,marker6);
+            infowindow6.open(map,marker6);
           });
 
           var infowindow = new google.maps.InfoWindow({
             map: map,
             position: pos,
-            content: 'Location found using HTML5.'
+            content: 'Your current location'
           });
 
            map.setCenter(pos);
@@ -147,8 +218,8 @@
 <body>
     <div id = "outer"> <!-- every DIV from now own should have class="inner"-->
         <div class= "inner"> <!-- every item (img, text, etc) should have its individual encaseing div. Guarantees resizing. -->
-            <div id="title" class="inner"> 
-                <img src="img/LOGO Train watch.png" class="innercontent"/>  <!-- every ITEM should have class="innercontent"-->
+            <div id="title" class="inner">
+                <a href= "police.php"><img src="img/LOGO Train watch.png" class="innercontent"/></a>
             </div>
             
             <!-- Insert data here. -->

@@ -28,7 +28,7 @@
                 	<a href= "pevidence.php"><img src="img/BUTTON add evidence.png" class="innercontent"/>
                 </div>
                 <div class="inner buttons">
-                	<a href= "maps.php"><img src="img/BUTTON crime map.png" class="innercontent"/>
+                	<a href= "maps2.html"><img src="img/BUTTON crime map.png" class="innercontent"/>
                 </div>
             </div>
 		</div>
