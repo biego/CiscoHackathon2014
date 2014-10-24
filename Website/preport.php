@@ -47,6 +47,7 @@ include_once("connection/queries2.php");
                      	<textarea name="description" id="description"></textarea><br/>
                         
                      <input type="submit" value="Submit" id="submitform">
+					 <a href = "trains.php">GET TRAINS </a>
 				</form>
 		</div>
 		</div>

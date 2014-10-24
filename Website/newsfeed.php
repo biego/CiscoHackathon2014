@@ -19,12 +19,7 @@
 			
 		</div>
 	</div>
-	<script type="text/javascript" src="theme/javascript/javascript.js"></script>
+	</div>
 </body>
-<script type="text/javascript" src="javascript/request_data.js"></script>
-<script type="text/javascript" src="javascript/liveTrains.js"></script>
 
-<script type="text/javascript">
-	requestData("data/trainInfo.html",callBack);
-</script>
 </html>
