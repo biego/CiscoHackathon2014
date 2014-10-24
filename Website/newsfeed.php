@@ -8,9 +8,7 @@
 </head>	
 
 <body>
-	<script type="text/javascript">
-		requestData("data/trainInfo.html",callback);
-	</script>
+
 	<div id = "outer">
 		<div class= "inner">
 			<div id="title" class="inner">
@@ -23,5 +21,10 @@
 	</div>
 	<script type="text/javascript" src="theme/javascript/javascript.js"></script>
 </body>
+<script type="text/javascript" src="javascript/request_data.js"></script>
+<script type="text/javascript" src="javascript/liveTrains.js"></script>
 
+<script type="text/javascript">
+	requestData("data/trainInfo.html",callback);
+</script>
 </html>
