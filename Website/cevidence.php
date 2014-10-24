@@ -14,43 +14,26 @@
                 <a href= "police.php"><img src="img/LOGO Train watch.png" class="innercontent"/></a>
             </div>
             
-            <div id="input_boxes">
+            <div class="inner formFormat">
 			<h1>Evidence</h1>
-			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
 				<form>
-					Name: <input type="text">
+					<label for="ename">Name: </label>
+                    	<input name="ename" id="ename" type="text"><br/>
+                    
+                    <label for="etype">File Type: </label>
+                        <select id = "etype" name="etype">
+                            <option value ="image">Image</option>
+                            <option value ="video">Video</option>
+                            <option value ="audio">Audio</option>
+                        </select><br/>
+                    
+                    <label for="edoc">Document: </label>
+                    	<input name="edoc" id="edoc" type="file"><br/>
+                        
+                    <label for="edesc">Description:</label>
+                    	<input name="edesc" id="edesc" type="text"><br/>
 				</form>
 			</div>
-			
-			<div id = "input_type" class ="input_box"> <!--Type of crime  cid-->
-			<!--<input type="file" name="datafile" size="40"> -->
-				<label for="typeselect">File Type: </label>
-				<select id = "inputselect">
-					<option value ="image">Image</option>
-					<option value ="video">Video</option>
-					<option value ="audion">Audio</option>
-				</select>
-			</div>
-			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
-				<form>
-					Document: <input type="file">
-				</form>
-			</div>
-			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
-				<form>
-					Description: <input type="text">
-				</form>
-			</div>
-			
-
-		<div id= "back_button">
-			<a href= "police.php">Back</a>
-		</div>
-		<div id="next_button"> 
-			<a href="next">Submit</a>
-		</div>
-
-		</div>
 		</div>
 	</div>
 </body>

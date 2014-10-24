@@ -19,6 +19,14 @@ function getPoliceReport($pid)
 	return $res;
 }
 
+function getPoliceReportLoc($location)
+{
+	$sql = "SELECT * FROM police_report WHERE location = '$location'";
+	$res = dbQuery($sql);
+	return $res;
+}
+
+
 function getCrimeType($cid)
 {
 	$sql = "SELECT name FROM crime_type WHERE cid = '$cid'";
@@ -30,6 +38,7 @@ function getCrimeType($cid)
 	}
 }
 
+
 function getEvidence($pid)
 {
 	$sql = "SELECT * FROM evidence WHERE pid = '$pid'";
@@ -37,6 +46,48 @@ function getEvidence($pid)
 	return $res;
 }
 
+
+function getAllAppInput()
+{	
+	$sql = "SELECT * FROM App_input";
+	$res = dbQuery($sql);
+	return $res;
+}
+
+function getAppInput($appid)
+{
+	$sql = "SELECT * FROM App_input WHERE appid = '$appid'";
+	$res = dbQuery($sql);
+	return $res;
+}
+
+function getAppInputLoc($location)
+{
+	$sql = "SELECT * FROM Ap_input WHERE location = '$loacation'";
+		$res = dbQuery($sql);
+	return $res;
+}
+
+function getAllEmergencies()
+{	
+	$sql = "SELECT * FROM Emergencies";
+	$res = dbQuery($sql);
+	return $res;
+}
+
+function getEmergencies($eid)
+{
+	$sql = "SELECT * FROM Emergencies WHERE eid = '$eid'";
+	$res = dbQuery($sql);
+	return $res;
+}
+
+function getEmergenciesLoc($location)
+{
+	$sql = "SELECT * FROM Emergencies WHERE location = '$loacation'";
+		$res = dbQuery($sql);
+	return $res;
+}
 
 
 function selectAllPosts()
@@ -119,4 +170,5 @@ function deletePost($post_id)
 	else
 		die('Error: ' . mysqli_error($res));
 }
+
 ?>
