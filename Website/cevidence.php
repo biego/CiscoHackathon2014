@@ -11,7 +11,7 @@
 	<div id = "outer">
 		<div class= "inner">
 			<div id="title" class="inner">
-                <a href= "police.html"><img src="img/LOGO Train watch.png" class="innercontent"/></a>
+                <a href= "police.php"><img src="img/LOGO Train watch.png" class="innercontent"/></a>
             </div>
             
             <div id="input_boxes">
@@ -44,7 +44,7 @@
 			
 
 		<div id= "back_button">
-			<a href= "police.html">Back</a>
+			<a href= "police.php">Back</a>
 		</div>
 		<div id="next_button"> 
 			<a href="next">Submit</a>

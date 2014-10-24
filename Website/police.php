@@ -19,16 +19,16 @@
             
             <div id="content" class="inner">
             	<div class="inner buttons">
-                	<a href= "police evidence.html"><img src="img/BUTTON police report.png" class="innercontent"/></a>
+                	<a href= "pevidence.php"><img src="img/BUTTON police report.png" class="innercontent"/></a>
                 </div>
                 <div class="inner buttons">
-                	<a href= "create report.html"><img src="img/BUTTON create report.png" class="innercontent"/></a>
+                	<a href= "preport.php"><img src="img/BUTTON create report.png" class="innercontent"/></a>
                 </div><br/>
                 <div class="inner buttons">
-                	<a href= "police evidence.html"><img src="img/BUTTON add evidence.png" class="innercontent"/>
+                	<a href= "pevidence.php"><img src="img/BUTTON add evidence.png" class="innercontent"/>
                 </div>
                 <div class="inner buttons">
-                	<a href= "crime maps.html"><img src="img/BUTTON crime map.png" class="innercontent"/>
+                	<a href= "maps.php"><img src="img/BUTTON crime map.png" class="innercontent"/>
                 </div>
             </div>
 		</div>

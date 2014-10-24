@@ -13,42 +13,36 @@
 			<div id="title" class="inner">
                 <a href= "police.php"><img src="img/LOGO Train watch.png" class="innercontent"/></a>
             </div>
-            <div id = "content">
+            
             <div id="input_boxes">
-			<h1>Report</h1>
+			<h1>Evidence</h1>
 			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
 				<form>
-					Police Officer ID: <input type="text">
+					Name: <input type="text">
 				</form>
 			</div>
-
+			
 			<div id = "input_type" class ="input_box"> <!--Type of crime  cid-->
-				<label for="crimeselect">Crime Type: </label>
-				<select id = "crimeselect">
-					<option value ="vandalism">Vandalism</option>
-					<option value ="drunk and disorderly">Drunk and Disorderly</option>
-					<option value ="robbery and theft">Robbery and Theft</option>
-					<option value ="metal theft">Metal Theft</option>
+			<!--<input type="file" name="datafile" size="40"> -->
+				<label for="typeselect">File Type: </label>
+				<select id = "inputselect">
+					<option value ="image">Image</option>
+					<option value ="video">Video</option>
+					<option value ="audion">Audio</option>
 				</select>
 			</div>
-
-			<div id ="input_date" class ="input_box"> <!--Date of crime-->
+			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
 				<form>
-					Date: <input type="text">
+					Document: <input type="file">
 				</form>
 			</div>
-
-			<div id ="input_location" class ="input_box"> <!--Location-->
-				<form>
-					Location: <input type="text">
-				</form>
-			</div>
-
-			<div id ="input_description" class ="input_box"> <!--Description of crime-->
+			<div id ="input_pid" class ="input_box"> <!--Police officer ID-->
 				<form>
 					Description: <input type="text">
 				</form>
 			</div>
+			
+
 		<div id= "back_button">
 			<a href= "police.php">Back</a>
 		</div>
@@ -58,9 +52,7 @@
 
 		</div>
 		</div>
-		</div>
 	</div>
-	<script type="text/javascript" src="theme/javascript/javascript.js"></script>
 </body>
 
 </html>
