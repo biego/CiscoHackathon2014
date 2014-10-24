@@ -10,7 +10,7 @@ function showAllPoliceReports()
 		echo '<div class="feed">';
 		echo "Case #".$report['pid']."<br/>";
 		echo "Date :".$report['date']."<br/>";
-		echo "Crime Type: ".getCrimeType($report['cid'])."<br/>";
+		echo "Crime Type: ".$report['cid']."<br/>";
 		echo "Location: ".$report['location']."<br/>";
 		echo "Description: ".$report['describtion']."<br/>"; 
 		echo "<br/>";
@@ -25,7 +25,7 @@ function showPoliceReports($pid)
 	{
 		echo "Case #".$report['pid']."<br/>";
 		echo "Date :".$report['date']."<br/>";
-		echo "Crime Type: ".getCrimeType($report['cid'])."<br/>";
+		echo "Crime Type: ".$report['cid']."<br/>";
 		echo "Location: ".$report['location']."<br/>";
 		echo "Description: ".$report['describtion']."<br/>"; 
 		echo "<br/>";
@@ -39,7 +39,7 @@ function showPoliceReportsLoc($location)
 	{
 		echo "Case #".$report['pid']."<br/>";
 		echo "Date :".$report['date']."<br/>";
-		echo "Crime Type: ".getCrimeType($report['cid'])."<br/>";
+		echo "Crime Type: ".$report['cid']."<br/>";
 		echo "Location: ".$report['location']."<br/>";
 		echo "Description: ".$report['describtion']."<br/>"; 
 		echo "<br/>";
