@@ -25,6 +25,6 @@
 <script type="text/javascript" src="javascript/liveTrains.js"></script>
 
 <script type="text/javascript">
-	requestData("data/trainInfo.html",callback);
+	requestData("data/trainInfo.html",callBack);
 </script>
 </html>
