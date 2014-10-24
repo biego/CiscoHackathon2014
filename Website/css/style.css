@@ -32,14 +32,14 @@ body
 #content
 {
 	width: 50%;
-	min-width: 440px;
+	min-width: 700px;
 	padding-top: 5%;
 }
 
 .buttons
 {
     width: 44%;
-    
+
     margin-left: 5%;
     margin-top: 5%;	
 	display:inline-block;
