@@ -1,5 +1,5 @@
   .button {
-    width: 25%;
+    width: 55%;
     margin: 10px auto;
     padding: 0 auto;
     border-radius: 5px 5px 5px 5px;
@@ -75,3 +75,18 @@ html
 #buttons{
     width: 30%:;
 }
+
+
+//newsfeed
+
+.feed{
+	position: relative;
+    margin: 0 auto;
+    width: 80%;
+    background-color: black;
+}
+
+#allfeed{
+    width: 30%;
+}
+

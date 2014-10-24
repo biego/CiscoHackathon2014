@@ -71,3 +71,19 @@ body
 #next_button {
     padding-left: 250
 }
+
+//newsfeed
+
+.feed{
+	position: relative;
+    margin: 0 auto;
+    width: 80%;
+    background-color: black;
+}
+
+#allfeed{
+    position: relative;
+    margin: 0 auto;
+    width: 45%;
+	font-family: Arial, Helvetica, sans-serif;
+}

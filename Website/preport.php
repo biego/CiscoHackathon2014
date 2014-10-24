@@ -50,8 +50,8 @@
 				</form>
 			</div>
 		<div id= "back_button">
-			<a href= "police.php">Back</a>
-		</div>
+				<button type="button" onclick="location.href='police.php'">Back</button>
+			</div>
 		<div id="next_button"> 
 			<a href="next">Submit</a>
 		</div>

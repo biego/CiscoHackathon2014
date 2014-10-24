@@ -16,8 +16,13 @@
             
             <div id="allfeed"><?php include_once("connection/functions.php"); showAllPoliceReports(); ?></div>
 			
+			<div id= "back_button">
+				<button type="button" onclick="location.href='police.php'">Back</button>
+			</div>
+			
 		</div>
 	</div>
+	
 	<script type="text/javascript" src="theme/javascript/javascript.js"></script>
 </body>
 
